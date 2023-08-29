@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>Spring-01-Core-IoC</module>
+        <module>Spring-02-Core-Wiring</module>
     </modules>
 
     <properties>
