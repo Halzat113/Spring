@@ -26,8 +26,8 @@ public class ConfigCar {
 
     //Autowiring
     @Bean
-    org.example.Person person(Car car){
-        org.example.Person p =new org.example.Person();
+    Person person(Car car){
+        Person p =new Person();
         p.setName("Mike");
         p.setCar(car);
         return p;
