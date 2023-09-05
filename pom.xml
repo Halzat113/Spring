@@ -13,6 +13,7 @@
         <module>Spring-02-Core-Wiring</module>
         <module>Spring-03-Core-DI</module>
         <module>Spring-04-Abstraction</module>
+        <module>Spring-05-Core-BeanScope</module>
     </modules>
 
     <properties>
