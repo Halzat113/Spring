@@ -12,8 +12,8 @@ public class Java {
     OfficeHours officeHours;
 
     //Construction Injection
-    //@Autowired
     //this works when we have only one constructor
+    //@Autowired
 //    public Java(OfficeHours officeHours) {
 //        this.officeHours = officeHours;
 //    }
