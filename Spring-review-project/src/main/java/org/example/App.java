@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.config.EmployeeConfig;
+import org.example.service.OvertimeSalaryService;
 import org.example.service.SalaryService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -11,6 +12,10 @@ public class App {
         SalaryService salaryService = container.getBean(SalaryService.class);
 
         salaryService.calculateRegularSalary();
+
+        OvertimeSalaryService overtimeSalaryService = container.getBean(OvertimeSalaryService.class);
+        overtimeSalaryService.calculateRegularSalary();
+
 
     }
 }
