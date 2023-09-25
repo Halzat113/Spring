@@ -18,7 +18,7 @@ public class CarController {
         return "/car/car-info";
     }
 
-    @RequestMapping("/info2")            //localhost:8080/car/info?make=Honda&year=2015
+    @RequestMapping("/info2")            //localhost:8080/car/info2?make=Honda&year=2015
     public String carInfo2(@RequestParam(value = "make",required = false,defaultValue = "Tesla") String make,@RequestParam(value = "year",required = false) Integer year, Model model){
         model.addAttribute("make",make);
         model.addAttribute("year",year);
@@ -27,7 +27,7 @@ public class CarController {
         return "/car/car-info";
     }
 
-    @RequestMapping("/info/{make}/{year}")            //localhost:8080/car/info/honda
+    @RequestMapping("/info/{make}/{year}")            //localhost:8080/car/info/honda/2015
     public String getCarInfo(@PathVariable String make, Model model,@PathVariable int year){
         model.addAttribute("make",make);
         model.addAttribute("year",year);
