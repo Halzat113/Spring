@@ -30,7 +30,7 @@
   <li th:each="student: ${students}" th:text="${student.firstname}"></li>
 </ul>
 
-<table>
+<table id="studentTable" class="table">
     <tr>
       <th>Firstname</th>
       <th>Lastname</th>
@@ -40,7 +40,6 @@
     <td th:text="${student.firstname}"></td>
     <td th:text="${student.lastname}"></td>
     <td th:text="${student.age}"></td>
-    <br>
   </tr>
 </table>
 
