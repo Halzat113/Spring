@@ -22,10 +22,16 @@ public class Payment {
 
     private BigDecimal amount;
 
+    @Enumerated(EnumType.STRING)
     private Status paymentStatus;
 
     @OneToOne(cascade = CascadeType.ALL)
     private PaymentDetail paymentDetail;
+
+    @ManyToOne
+    private Merchant merchant;
+    @ManyToOne
+    private Customer customer;
 
     public Payment(LocalDate createdDate, BigDecimal amount, Status paymentStatus) {
         this.createdDate = createdDate;
