@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.model.Student;
+import com.example.entity.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

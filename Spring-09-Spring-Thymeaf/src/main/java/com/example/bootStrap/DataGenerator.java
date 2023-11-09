@@ -1,9 +1,8 @@
 package com.example.bootStrap;
 
-import com.example.model.Student;
+import com.example.entity.Student;
 import com.github.javafaker.Faker;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class DataGenerator {
