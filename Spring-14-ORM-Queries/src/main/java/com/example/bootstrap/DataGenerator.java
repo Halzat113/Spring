@@ -1,6 +1,7 @@
 package com.example.bootstrap;
 
 import com.example.entity.Region;
+import com.example.repostirory.CourseRepository;
 import com.example.repostirory.DepartmentRepository;
 import com.example.repostirory.EmployeeRepository;
 import com.example.repostirory.RegionsRepository;
@@ -14,10 +15,13 @@ public class DataGenerator implements CommandLineRunner {
 
     private final EmployeeRepository employeeRepository;
 
-    public DataGenerator(RegionsRepository regionsRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
+    private final CourseRepository courseRepository;
+
+    public DataGenerator(RegionsRepository regionsRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository, CourseRepository courseRepository) {
         this.regionsRepository = regionsRepository;
         this.departmentRepository = departmentRepository;
         this.employeeRepository = employeeRepository;
+        this.courseRepository = courseRepository;
     }
 
     @Override
@@ -48,8 +52,16 @@ public class DataGenerator implements CommandLineRunner {
 
         System.out.println("-------------------------EMPLOYEE START----------------------");
 
-        System.out.println("findByEmail"+employeeRepository.findByEmail("thuddlestonrf@yahoo.co.jp"));
+        System.out.println("getEmployeeDetail "+employeeRepository.getEmployeeDetail());
+        System.out.println("getEmployeeSalary: "+employeeRepository.getEmployeeSalary());
+
         System.out.println("-------------------------EMPLOYEE END----------------------");
+
+        System.out.println("-------------------------COURSE START----------------------");
+
+        courseRepository.findByCategory("Spring").forEach(System.out::println);
+
+        System.out.println("-------------------------COURSE END----------------------");
 
 
 
