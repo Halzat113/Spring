@@ -2,8 +2,11 @@ package com.example.repostirory;
 
 import com.example.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -52,6 +55,21 @@ public interface EmployeeRepository extends JpaRepository<Employee,Long> {
 
     @Query("SELECT e FROM Employee e WHERE e.email=?1 AND e.salary=?2")
     Employee getEmployeeDetail(String email,int salary);
+
+    //Not Null
+    @Query("SELECT e FROM Employee e WHERE e.salary<>?1 ")
+    List<Employee> getEmployeeSalaryNotEqual(int salary);
+
+    @Query(value = "SELECT * from emloyees where salary ?1",nativeQuery = true) //using pure sql query
+    List<Employee> readEmployeeDetailBySalary(int salary);
+
+    @Query("SELECT e FROM Employee e WHERE e.salary=:salary")
+    List<Employee> getEmployeeSalary(@Param("salary")int salary);
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE Employee e SET e.email = 'admin@email.com' WHERE e.id=:id")
+    void updateEmployeeJPQL(@Param("id") int id);
 
 
 }
