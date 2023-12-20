@@ -33,9 +33,9 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public CourseDto getCourseByCategory(String category) {
-       Course course = courseRepository.findByCategory(category);
-       return mapperUtil.convert(course,new CourseDto());
+    public List<CourseDto> getCourseByCategory(String category) {
+      return courseRepository.findByCategory(category).stream()
+              .map(c->mapperUtil.convert(c,new CourseDto())).collect(Collectors.toList());
     }
 
     @Override
