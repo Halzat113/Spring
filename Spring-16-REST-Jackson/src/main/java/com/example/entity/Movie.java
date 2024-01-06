@@ -3,9 +3,7 @@ package com.example.entity;
 import com.example.enums.MovieState;
 import com.example.enums.MovieType;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -13,8 +11,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Setter
-@Getter
+@Data
 @NoArgsConstructor
 public class Movie extends BaseEntity{
     private String name;
@@ -33,17 +30,4 @@ public class Movie extends BaseEntity{
     joinColumns = @JoinColumn(name = "movie_id"),
     inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private List<Genre> genreList;
-
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "name='" + name + '\'' +
-                ", releaseDate=" + releaseDate +
-                ", duration=" + duration +
-                ", summary='" + summary + '\'' +
-                ", price=" + price +
-                ", type=" + type +
-                ", state=" + state +
-                '}';
-    }
 }
