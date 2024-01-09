@@ -11,11 +11,25 @@
     <groupId>com.example</groupId>
     <artifactId>Spring-17-REST-CosumingApis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Spring-17-REST-CosumingApis</name>
-    <description>Spring-17-REST-CosumingApis</description>
+    <name>Spring-17-REST-ConsumingApis</name>
+    <description>Spring-17-REST-ConsumingApis</description>
     <properties>
         <java.version>17</java.version>
+        <spring-cloud.version>2023.0.0</spring-cloud.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -41,7 +55,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>4.0.3</version>
+        </dependency>
+
+
     </dependencies>
+
 
     <build>
         <plugins>
