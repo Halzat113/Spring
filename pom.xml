@@ -15,6 +15,7 @@
         <module>Spring-04-Abstraction</module>
         <module>Spring-05-Core-BeanScope</module>
         <module>Spring-review-project</module>
+        <module>Spring-20-UnitTesting-Junit5</module>
     </modules>
 
     <properties>
